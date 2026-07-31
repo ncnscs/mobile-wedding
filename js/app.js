@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
    ========================================================================== */
 function initDDayTimer() {
   const weddingDate = new Date('2026-09-12T12:00:00+09:00').getTime();
-  
+
   const daysEl = document.getElementById('days');
   const hoursEl = document.getElementById('hours');
   const minutesEl = document.getElementById('minutes');
@@ -217,7 +217,7 @@ function showToast(msg) {
    5. RSVP Form Handling & Modal (Google Sheets + LocalStorage Fallback)
    ========================================================================== */
 // 구글 앱스 스크립트 웹앱 배포 URL (GOOGLE_SHEETS_GUIDE.md 참조)
-const GOOGLE_SCRIPT_URL = '';
+const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbwxdrO9YCFkgDEAJtaTfuZrzYA69g2LCYgoli8TBOgFqba4-8AKi92JgeSQEmO7uFcwrw/exec';
 
 async function handleRSVPSubmit(event) {
   event.preventDefault();
