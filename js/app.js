@@ -214,16 +214,71 @@ function showToast(msg) {
 }
 
 /* ==========================================================================
-   5. RSVP Form Handling & Modal
+   5. RSVP Form Handling & Modal (Google Sheets + LocalStorage Fallback)
    ========================================================================== */
-function handleRSVPSubmit(event) {
+// 구글 앱스 스크립트 웹앱 배포 URL (GOOGLE_SHEETS_GUIDE.md 참조)
+const GOOGLE_SCRIPT_URL = '';
+
+async function handleRSVPSubmit(event) {
   event.preventDefault();
-  const nameInput = document.getElementById('rsvp-name');
-  const name = nameInput ? nameInput.value.trim() : '하객';
+
+  const submitBtn = document.querySelector('.rsvp-submit-btn');
+  const originalBtnText = submitBtn ? submitBtn.innerText : '참석 의사 전달하기';
+
+  const form = document.getElementById('rsvp-form');
+  const side = form.querySelector('input[name="side"]:checked')?.value === 'groom' ? '신랑측' : '신부측';
+  const name = document.getElementById('rsvp-name')?.value.trim() || '하객';
+  const phone = document.getElementById('rsvp-phone')?.value.trim() || '';
+  const count = document.getElementById('rsvp-count')?.value || '1';
+
+  const mealVal = form.querySelector('input[name="meal"]:checked')?.value;
+  const mealMap = { yes: '식사함', no: '안함', undecided: '미정' };
+  const meal = mealMap[mealVal] || '미정';
+
+  const message = document.getElementById('rsvp-msg')?.value.trim() || '';
+
+  const payload = {
+    timestamp: new Date().toLocaleString('ko-KR'),
+    side,
+    name,
+    phone,
+    count,
+    meal,
+    message
+  };
+
+  // 1. 전송 중 상태 표시 및 버튼 비활성화
+  if (submitBtn) {
+    submitBtn.disabled = true;
+    submitBtn.innerText = '전송 중...';
+  }
+
+  // 2. 로컬 스토리지에 2차 백업 저장
+  saveRSVPToLocalStorage(payload);
+
+  // 3. 구글 스프레드시트로 데이터 전송 (URL 설정 시)
+  if (GOOGLE_SCRIPT_URL) {
+    try {
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(payload)
+      });
+    } catch (err) {
+      console.warn('구글 시트 전송 중 오류 발생 (로컬 스토리지에는 저장됨):', err);
+    }
+  }
+
+  // 4. 버튼 상태 복구 및 안내 모달 표시
+  if (submitBtn) {
+    submitBtn.disabled = false;
+    submitBtn.innerText = originalBtnText;
+  }
 
   const modal = document.getElementById('rsvp-modal');
   const modalDesc = document.getElementById('rsvp-modal-desc');
-  
+
   if (modalDesc) {
     modalDesc.innerHTML = `<strong>${name}</strong>님, 참석 정보가 전달되었습니다.<br>소중한 걸음 마음 깊이 기억하겠습니다.`;
   }
@@ -231,7 +286,17 @@ function handleRSVPSubmit(event) {
     modal.classList.add('active');
   }
 
-  document.getElementById('rsvp-form').reset();
+  form.reset();
+}
+
+function saveRSVPToLocalStorage(data) {
+  try {
+    const existing = JSON.parse(localStorage.getItem('wedding_rsvp_list') || '[]');
+    existing.push(data);
+    localStorage.setItem('wedding_rsvp_list', JSON.stringify(existing));
+  } catch (e) {
+    console.error('로컬스토리지 저장 실패:', e);
+  }
 }
 
 function closeRSVPModal() {
