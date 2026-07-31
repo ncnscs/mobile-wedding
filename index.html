@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>김희재 ♥ 이해연 모바일 청첩장</title>
+
+  <!-- Open Graph / KakaoTalk Preview Meta Tags -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="김희재 ♥ 이해연의 모바일 청첩장">
+  <meta property="og:description" content="2026년 9월 12일 토요일 오후 12시, 파주 웨딩마을">
+  <meta property="og:image" content="pics/_DSC6200.jpg">
+  <meta property="og:locale" content="ko_KR">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="mobile-container">
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="hero-bg-overlay"></div>
+      <img src="pics/_DSC6200.jpg" alt="메인 웨딩 화보" class="hero-bg-img">
+      <div class="hero-content">
+        <p class="hero-subtitle">WEDDING INVITATION</p>
+        <h1 class="hero-names">김희재 <span class="heart">♥</span> 이해연</h1>
+        <p class="hero-date-location">2026. 09. 12. SAT PM 12:00<br>파주 웨딩마을</p>
+        <div class="dday-card">
+          <div class="dday-badge" id="dday-badge">D-DAY</div>
+          <div class="dday-timer" id="dday-timer">
+            <div class="time-box"><span id="days">00</span><label>DAYS</label></div>
+            <div class="time-sep">:</div>
+            <div class="time-box"><span id="hours">00</span><label>HOURS</label></div>
+            <div class="time-sep">:</div>
+            <div class="time-box"><span id="minutes">00</span><label>MINS</label></div>
+            <div class="time-sep">:</div>
+            <div class="time-box"><span id="seconds">00</span><label>SECS</label></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Invitation & Contact Section -->
+    <section class="invitation-section">
+      <div class="section-header">
+        <span class="section-tag">INVITATION</span>
+        <h2 class="section-title">소중한 분들을 모십니다</h2>
+        <div class="gold-divider"></div>
+      </div>
+      
+      <div class="invitation-body">
+        <p>서로가 서로에게 전부가 되어<br>
+        따뜻한 사랑으로 가꾸어 온 저희 두 사람이<br>
+        이제 소중한 분들 앞에서<br>
+        평생을 함께할 약속을 맺고자 합니다.</p>
+        
+        <p class="highlight-poem">"서로 다른 색으로 물들어 가며<br>하나의 빛으로 피어나겠습니다."</p>
+        
+        <p>저희의 뜻깊은 출발의 자리에 함께하시어<br>
+        따뜻한 축복으로 밝혀주시면<br>
+        더없는 기쁨으로 간직하겠습니다.</p>
+      </div>
+
+      <div class="couple-contact-box">
+        <div class="couple-card">
+          <div class="couple-role">GROOM</div>
+          <div class="couple-name">김희재</div>
+          <div class="btn-group">
+            <a href="tel:010-3955-0256" class="contact-btn call"><span class="icon">📞</span> 전화</a>
+            <a href="sms:010-3955-0256" class="contact-btn sms"><span class="icon">💬</span> 문자</a>
+          </div>
+        </div>
+
+        <div class="couple-card">
+          <div class="couple-role">BRIDE</div>
+          <div class="couple-name">이해연</div>
+          <div class="btn-group">
+            <a href="tel:010-7244-4495" class="contact-btn call"><span class="icon">📞</span> 전화</a>
+            <a href="sms:010-7244-4495" class="contact-btn sms"><span class="icon">💬</span> 문자</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <div class="section-header">
+        <span class="section-tag">GALLERY</span>
+        <h2 class="section-title">소중한 순간들</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Rendered dynamically by JS -->
+      </div>
+
+      <button class="gallery-more-btn" id="gallery-more-btn">사진 더보기 (28장)</button>
+    </section>
+
+    <!-- Location Section -->
+    <section class="location-section">
+      <div class="section-header">
+        <span class="section-tag">LOCATION</span>
+        <h2 class="section-title">오시는 길</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <div class="venue-info-card">
+        <h3 class="venue-name">웨딩마을</h3>
+        <p class="venue-address">경기 파주시 탄현면 헤이리마을길 76-12</p>
+      </div>
+
+      <div class="map-container">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3154.551608670878!2d126.69974577648356!3d37.7888748719811!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357c919a79c93393%3A0xe54e38c9bf4efb88!2z6rK96riw64-EIO2MjOyjvOyLnCD 탄현면 헤이리마을길 76-12!5e0!3m2!1sko!2skr!4v1700000000000!5m2!1sko!2skr" 
+          width="100%" height="220" style="border:0; border-radius: var(--radius-sm);" allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+      <div class="map-buttons">
+        <a href="https://map.naver.com/v5/search/%EA%B2%BD%EA%B8%B0%20%ED%8C%8C%EC%A3%BC%EC%8B%9C%20%ED%83%84%ED%98%84%EB%A9%B4%20%ED%97%B9%EC%9D%B4%EB%A6%AC%EB%A7%88%EC%9D%84%EA%B8%B8%2076-12" target="_blank" rel="noopener noreferrer" class="map-btn naver">
+          네이버지도
+        </a>
+        <a href="https://map.kakao.com/link/search/경기 파주시 탄현면 헤이리마을길 76-12" target="_blank" rel="noopener noreferrer" class="map-btn kakao">
+          카카오맵
+        </a>
+        <a href="https://tmap.co.kr/tmap2/mobile/route.jsp?name=웨딩마을" target="_blank" rel="noopener noreferrer" class="map-btn tmap">
+          티맵
+        </a>
+      </div>
+
+      <div class="transport-info-box">
+        <div class="transport-card">
+          <div class="transport-icon">🚗</div>
+          <div class="transport-detail">
+            <h4>자차 이용 시 (주차 안내)</h4>
+            <p>예식장 내 <strong>무료 주차</strong> 가능합니다.</p>
+          </div>
+        </div>
+
+        <div class="transport-card">
+          <div class="transport-icon">🚌</div>
+          <div class="transport-detail">
+            <h4>좌석버스 이용 시</h4>
+            <span class="bus-badge red">2200</span> <span class="bus-badge red">2200-1</span>
+            <p class="transport-desc">홍대입구역 1번 출구 → 합정역 1번 출구 → <strong>법흥3리 헤이리커뮤니티하우스</strong> 하차</p>
+          </div>
+        </div>
+
+        <div class="transport-card">
+          <div class="transport-icon">🚍</div>
+          <div class="transport-detail">
+            <h4>시내버스 이용 시</h4>
+            <span class="bus-badge green">900</span>
+            <p class="transport-desc">킨텍스역 → 대화역 → 탄현역 → 금촌역 → <strong>"민들레 병원"</strong> 하차</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Account Section -->
+    <section class="account-section">
+      <div class="section-header">
+        <span class="section-tag">ACCOUNT</span>
+        <h2 class="section-title">마음 전하실 곳</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <p class="account-notice">소중한 축복의 마음을 담아 전해드립니다.</p>
+
+      <div class="accordion">
+        <!-- Groom Account -->
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>신랑측 계좌번호 (김희재)</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="account-detail">
+              <div class="bank-name">신한은행</div>
+              <div class="account-number" id="groom-account">110-436-024423</div>
+              <div class="account-holder">예금주: 김희재</div>
+              <button class="copy-btn" onclick="copyToClipboard('110-436-024423')">계좌번호 복사</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bride Account -->
+        <div class="accordion-item">
+          <button class="accordion-header" onclick="toggleAccordion(this)">
+            <span>신부측 계좌번호 (이해연)</span>
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="accordion-content">
+            <div class="account-detail">
+              <div class="bank-name">농협은행</div>
+              <div class="account-number" id="bride-account">356-08-53534283</div>
+              <div class="account-holder">예금주: 이해연</div>
+              <button class="copy-btn" onclick="copyToClipboard('356-08-53534283')">계좌번호 복사</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RSVP Section -->
+    <section class="rsvp-section">
+      <div class="section-header">
+        <span class="section-tag">RSVP</span>
+        <h2 class="section-title">참석 여부 전달</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <form id="rsvp-form" class="rsvp-form" onsubmit="handleRSVPSubmit(event)">
+        <div class="form-group">
+          <label class="form-label">구분</label>
+          <div class="radio-group">
+            <label class="radio-btn"><input type="radio" name="side" value="groom" checked> <span>신랑측</span></label>
+            <label class="radio-btn"><input type="radio" name="side" value="bride"> <span>신부측</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="rsvp-name" class="form-label">성함</label>
+          <input type="text" id="rsvp-name" class="form-input" placeholder="성함을 입력해주세요" required>
+        </div>
+
+        <div class="form-group">
+          <label for="rsvp-phone" class="form-label">연락처</label>
+          <input type="tel" id="rsvp-phone" class="form-input" placeholder="010-0000-0000" required>
+        </div>
+
+        <div class="form-group">
+          <label for="rsvp-count" class="form-label">동석 인원수</label>
+          <select id="rsvp-count" class="form-input">
+            <option value="1">본인 (1명)</option>
+            <option value="2">2명</option>
+            <option value="3">3명</option>
+            <option value="4">4명 이상</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label class="form-label">식사 여부</label>
+          <div class="radio-group">
+            <label class="radio-btn"><input type="radio" name="meal" value="yes" checked> <span>식사함</span></label>
+            <label class="radio-btn"><input type="radio" name="meal" value="no"> <span>안함</span></label>
+            <label class="radio-btn"><input type="radio" name="meal" value="undecided"> <span>미정</span></label>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="rsvp-msg" class="form-label">축하 메시지 (선택)</label>
+          <textarea id="rsvp-msg" class="form-textarea" rows="3" placeholder="축하의 말을 남겨주세요"></textarea>
+        </div>
+
+        <button type="submit" class="rsvp-submit-btn">참석 의사 전달하기</button>
+      </form>
+    </section>
+
+    <!-- Footer -->
+    <footer class="wedding-footer">
+      <p>Heejae & Hyeon</p>
+      <p class="copyright">© 2026. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- Lightbox Modal -->
+  <div class="lightbox-modal" id="lightbox-modal">
+    <div class="lightbox-overlay" id="lightbox-overlay"></div>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightbox-close" aria-label="닫기">&times;</button>
+      <div class="lightbox-counter" id="lightbox-counter">1 / 28</div>
+      <div class="lightbox-img-wrapper">
+        <img id="lightbox-img" src="" alt="갤러리 확대 사진">
+      </div>
+      <button class="lightbox-nav prev" id="lightbox-prev" aria-label="이전 사진">&#10094;</button>
+      <button class="lightbox-nav next" id="lightbox-next" aria-label="다음 사진">&#10095;</button>
+    </div>
+  </div>
+
+  <!-- Toast Popup -->
+  <div class="toast" id="toast">계좌번호가 복사되었습니다.</div>
+
+  <!-- RSVP Modal -->
+  <div class="rsvp-modal" id="rsvp-modal">
+    <div class="rsvp-modal-card">
+      <div class="modal-icon">💌</div>
+      <h3>감사합니다!</h3>
+      <p id="rsvp-modal-desc">참석 정보가 전달되었습니다.<br>소중한 걸음 마음 깊이 기억하겠습니다.</p>
+      <button class="modal-close-btn" onclick="closeRSVPModal()">확인</button>
+    </div>
+  </div>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
