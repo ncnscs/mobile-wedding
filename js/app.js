@@ -444,6 +444,8 @@ function initBGMPlayer() {
   const toggleBtn = document.getElementById('bgm-toggle-btn');
   if (!bgm || !toggleBtn) return;
 
+  bgm.volume = 0.8;
+
   let isPlaying = false;
 
   function playBGM() {
