@@ -155,7 +155,7 @@ section {
   font-size: 1.05rem;
   color: var(--text-primary);
   line-height: 1.8;
-  margin-bottom: 28px;
+  margin-bottom: 0;
   font-weight: 600;
   letter-spacing: 1px;
   text-shadow: 0 1px 6px rgba(255, 255, 255, 0.9);
@@ -167,64 +167,6 @@ section {
   display: inline-block;
   margin-top: 2px;
   font-weight: 600;
-}
-
-.dday-card {
-  background: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(197, 139, 126, 0.35);
-  border-radius: var(--radius-md);
-  padding: 16px 20px;
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
-}
-
-.dday-badge {
-  font-family: var(--font-en-serif);
-  font-size: 0.85rem;
-  letter-spacing: 3px;
-  color: var(--accent-gold);
-  font-weight: 600;
-  margin-bottom: 8px;
-}
-
-.dday-timer {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 12px;
-}
-
-.time-box {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.time-box span {
-  font-family: var(--font-en-serif);
-  font-size: 1.8rem;
-  font-weight: 600;
-  color: var(--text-primary);
-  line-height: 1;
-}
-
-.time-box label {
-  font-family: var(--font-sans);
-  font-size: 0.62rem;
-  font-weight: 500;
-  color: var(--text-secondary);
-  letter-spacing: 1.5px;
-  margin-top: 6px;
-  text-transform: uppercase;
-}
-
-.time-sep {
-  font-family: var(--font-en-serif);
-  font-size: 1.3rem;
-  color: var(--accent-gold);
-  margin-bottom: 14px;
-  opacity: 0.7;
 }
 
 /* Invitation Section */
