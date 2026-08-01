@@ -19,6 +19,8 @@
     href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400;600&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
+  <!-- Naver Maps v3 OpenAPI Script (Replace YOUR_CLIENT_ID with your Naver Cloud Platform Client ID) -->
+  <script type="text/javascript" src="https://oapi.map.naver.com/openapi/v3/maps.js?ncpClientId=YOUR_CLIENT_ID"></script>
 </head>
 
 <body>
@@ -200,11 +202,7 @@
       </div>
 
       <div class="map-container">
-        <iframe
-          src="https://www.openstreetmap.org/export/embed.html?bbox=126.6937458%2C37.7848749%2C126.7057458%2C37.7928749&amp;layer=mapnik&amp;marker=37.7888749%2C126.6997458"
-          width="100%" height="250" style="border:0; border-radius: var(--radius-sm);" allowfullscreen=""
-          loading="lazy">
-        </iframe>
+        <div id="naver-map"></div>
       </div>
 
       <div class="map-buttons">
