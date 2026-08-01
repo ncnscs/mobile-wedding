@@ -425,17 +425,22 @@ function initNaverMap() {
   const lat = 37.7888749;
   const lng = 126.6997458;
 
-  // Check if Naver Maps API script is loaded and API key is authorized
-  if (typeof naver === 'undefined' || !naver.maps || !naver.maps.Map) {
+  function renderFallback() {
     mapEl.innerHTML = `
-      <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; min-height:220px; background:var(--bg-card); border-radius:var(--radius-sm); border:1px solid var(--gold-subtle); padding:20px; text-align:center;">
-        <p style="margin-bottom:6px; font-weight:600; font-size:16px; color:var(--text-dark);">📍 파주 웨딩마을</p>
-        <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">경기 파주시 탄현면 헤이리마을길 76-12</p>
-        <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(30, 200, 0, 0.08); padding:6px 12px; border-radius:20px; border:1px solid rgba(30,200,0,0.2);">
-          <span style="font-size:12px; color:#1ec800; font-weight:600;">N 네이버 지도</span>
-        </div>
+      <div class="naver-map-fallback">
+        <div class="fallback-pin">📍</div>
+        <h4 class="fallback-title">웨딩마을</h4>
+        <p class="fallback-addr">경기 파주시 탄현면 헤이리마을길 76-12</p>
+        <a href="https://map.naver.com/v5/search/%EA%B2%BD%EA%B8%B0%20%ED%8C%8C%EC%A3%BC%EC%8B%9C%20%ED%83%84%ED%98%84%EB%A9%B4%20%ED%97%B9%EC%9D%B4%EB%A6%AC%EB%A7%88%EC%9D%84%EA%B8%B8%2076-12" target="_blank" rel="noopener noreferrer" class="fallback-naver-btn">
+          <span class="n-badge">N</span> 네이버 지도로 위치 보기
+        </a>
       </div>
     `;
+  }
+
+  // Check if Naver Maps API script is loaded and API key is authorized
+  if (typeof naver === 'undefined' || !naver.maps || !naver.maps.Map) {
+    renderFallback();
     return;
   }
 
@@ -467,7 +472,8 @@ function initNaverMap() {
 
     infoWindow.open(map, marker);
   } catch (e) {
-    console.warn('Naver map initialization failed:', e);
+    console.warn('Naver map initialization failed, rendering fallback:', e);
+    renderFallback();
   }
 }
 
