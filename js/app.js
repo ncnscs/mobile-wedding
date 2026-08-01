@@ -4,6 +4,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initThanksToast();
   initBCutGallery();
   initNaverMap();
+  initBGMPlayer();
 });
 
 /* ==========================================================================
@@ -476,4 +477,58 @@ function initNaverMap() {
     renderFallback();
   }
 }
+
+/* ==========================================================================
+   6. BGM Player & Autoplay Handler
+   ========================================================================== */
+function initBGMPlayer() {
+  const bgm = document.getElementById('bgm-player');
+  const toggleBtn = document.getElementById('bgm-toggle-btn');
+  if (!bgm || !toggleBtn) return;
+
+  let isPlaying = false;
+
+  function playBGM() {
+    bgm.play().then(() => {
+      isPlaying = true;
+      toggleBtn.classList.remove('paused');
+      toggleBtn.classList.add('playing');
+    }).catch(err => {
+      console.log('Autoplay prevented by browser:', err);
+      isPlaying = false;
+      toggleBtn.classList.remove('playing');
+      toggleBtn.classList.add('paused');
+    });
+  }
+
+  function pauseBGM() {
+    bgm.pause();
+    isPlaying = false;
+    toggleBtn.classList.remove('playing');
+    toggleBtn.classList.add('paused');
+  }
+
+  toggleBtn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    if (isPlaying) {
+      pauseBGM();
+    } else {
+      playBGM();
+    }
+  });
+
+  const enableAutoPlay = () => {
+    if (!isPlaying) {
+      playBGM();
+    }
+    document.removeEventListener('click', enableAutoPlay);
+    document.removeEventListener('touchstart', enableAutoPlay);
+  };
+
+  document.addEventListener('click', enableAutoPlay, { once: true });
+  document.addEventListener('touchstart', enableAutoPlay, { once: true });
+
+  playBGM();
+}
+
 
