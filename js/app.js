@@ -94,8 +94,8 @@ function renderGallery(count) {
   displayPhotos.forEach((filename, idx) => {
     const item = document.createElement('div');
     item.className = 'gallery-item';
-    item.innerHTML = `<img src="pics/${encodeURIComponent(filename)}" alt="웨딩 화보 ${idx + 1}" loading="lazy">`;
-    item.addEventListener('click', () => openLightbox(idx));
+    item.innerHTML = `<img src="${getPhotoUrl(filename)}" alt="웨딩 화보 ${idx + 1}" loading="lazy">`;
+    item.addEventListener('click', () => openLightbox(idx, photoList));
     grid.appendChild(item);
   });
 }
@@ -152,10 +152,14 @@ function changeLightboxPhoto(dir) {
   updateLightboxContent();
 }
 
+function getPhotoUrl(filename) {
+  return 'pics/' + filename.split('/').map(s => encodeURIComponent(s)).join('/');
+}
+
 function updateLightboxContent() {
   const img = document.getElementById('lightbox-img');
   const counter = document.getElementById('lightbox-counter');
-  img.src = `pics/${encodeURIComponent(currentPhotoList[currentIndex])}`;
+  img.src = getPhotoUrl(currentPhotoList[currentIndex]);
   counter.innerText = `${currentIndex + 1} / ${currentPhotoList.length}`;
 }
 
@@ -344,11 +348,22 @@ function initThanksToast() {
 }
 
 const bcutPhotoList = [
-  "_DSC4861-편집.jpg", "_DSC4515.JPG", "_DSC4541_1.JPG", "_DSC4566.JPG",
-  "_DSC6834.jpg", "_DSC6838.jpg", "_DSC6846.jpg", "_DSC6921.jpg"
+  "b-cut/KakaoTalk_20260328_153933296.jpg",
+  "b-cut/KakaoTalk_20260328_153933296_03.jpg",
+  "b-cut/_DSC5802.jpg",
+  "b-cut/_DSC6210.jpg",
+  "b-cut/_DSC6622.jpg",
+  "b-cut/_DSC6907.jpg"
 ];
 
 function initBCutGallery() {
+  // 모바일 테스트 꿀팁: URL에 ?reset 이 붙어있으면 잠금 상태로 초기화
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.has('reset')) {
+    localStorage.removeItem('wedding_bcut_unlocked');
+    window.history.replaceState({}, document.title, window.location.pathname);
+  }
+
   const isUnlocked = localStorage.getItem('wedding_bcut_unlocked') === 'true';
   if (isUnlocked) {
     unlockBCutGallery(false);
@@ -379,7 +394,7 @@ function renderBCutGrid() {
   bcutPhotoList.forEach((filename, idx) => {
     const item = document.createElement('div');
     item.className = 'bcut-item';
-    item.innerHTML = `<img src="pics/${encodeURIComponent(filename)}" alt="B컷 화보 ${idx + 1}" loading="lazy">`;
+    item.innerHTML = `<img src="${getPhotoUrl(filename)}" alt="B컷 화보 ${idx + 1}" loading="lazy">`;
     item.addEventListener('click', () => openLightbox(idx, bcutPhotoList));
     grid.appendChild(item);
   });
