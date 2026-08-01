@@ -99,6 +99,31 @@
       <button class="gallery-more-btn" id="gallery-more-btn">사진 더보기 (28장)</button>
     </section>
 
+    <!-- B-Cut Gallery Section -->
+    <section class="bcut-section" id="bcut-section">
+      <!-- Locked Card State -->
+      <div class="bcut-locked-card" id="bcut-locked-card">
+        <div class="bcut-lock-icon">🔒</div>
+        <span class="bcut-tag">SPECIAL BEHIND</span>
+        <h3 class="bcut-title">비하인드 B컷 갤러리</h3>
+        <p class="bcut-desc">RSVP 참석 응답 시 축하 메시지를 남겨주시면<br>신랑·신부의 숨겨진 B컷 화보가 오픈됩니다 💕</p>
+        <button type="button" class="bcut-go-rsvp-btn" onclick="scrollToRSVP()">축하 메시지 남기고 B컷 열기 ✍️</button>
+      </div>
+
+      <!-- Unlocked State (Hidden initially) -->
+      <div class="bcut-unlocked-container hidden" id="bcut-unlocked-card">
+        <div class="section-header">
+          <span class="section-tag">BEHIND STORY</span>
+          <h2 class="section-title">✨ 비하인드 B컷 갤러리</h2>
+          <p class="bcut-sub-notice">소중한 축하 메시지 감사합니다! 자유롭게 감상하세요.</p>
+          <div class="gold-divider"></div>
+        </div>
+        <div class="bcut-grid" id="bcut-grid">
+          <!-- Dynamic rendering via JS -->
+        </div>
+      </div>
+    </section>
+
     <!-- RSVP Section -->
     <section class="rsvp-section">
       <div class="section-header">
@@ -148,6 +173,9 @@
         <div class="form-group">
           <label for="rsvp-msg" class="form-label">축하 메시지 (선택)</label>
           <textarea id="rsvp-msg" class="form-textarea" rows="3" placeholder="축하의 말을 남겨주세요"></textarea>
+          <div id="rsvp-msg-thanks" class="thanks-note">
+            <span class="heart-icon">💖</span> 헉! 설마 축하메시지를 써주시는 건가요...?! 정말 감사드립니다!
+          </div>
         </div>
 
         <button type="submit" class="rsvp-submit-btn">참석 의사 전달하기</button>
@@ -290,7 +318,10 @@
       <div class="modal-icon">💌</div>
       <h3>감사합니다!</h3>
       <p id="rsvp-modal-desc">참석 정보가 전달되었습니다.<br>소중한 걸음 마음 깊이 기억하겠습니다.</p>
-      <button class="modal-close-btn" onclick="closeRSVPModal()">확인</button>
+      <div class="rsvp-modal-actions">
+        <button id="rsvp-bcut-go-btn" class="bcut-modal-btn hidden" onclick="goToBCutGallery()">🎁 B컷 갤러리 보러가기</button>
+        <button class="modal-close-btn" onclick="closeRSVPModal()">확인</button>
+      </div>
     </div>
   </div>
 
