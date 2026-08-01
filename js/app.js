@@ -3,6 +3,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initGallery();
   initThanksToast();
   initBCutGallery();
+  initNaverMap();
 });
 
 /* ==========================================================================
@@ -413,3 +414,60 @@ function goToBCutGallery() {
   closeRSVPModal();
   unlockBCutGallery(true);
 }
+
+/* ==========================================================================
+   Naver Map Initialization
+   ========================================================================== */
+function initNaverMap() {
+  const mapEl = document.getElementById('naver-map');
+  if (!mapEl) return;
+
+  const lat = 37.7888749;
+  const lng = 126.6997458;
+
+  // Check if Naver Maps API script is loaded and API key is authorized
+  if (typeof naver === 'undefined' || !naver.maps || !naver.maps.Map) {
+    mapEl.innerHTML = `
+      <div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; min-height:220px; background:var(--bg-card); border-radius:var(--radius-sm); border:1px solid var(--gold-subtle); padding:20px; text-align:center;">
+        <p style="margin-bottom:6px; font-weight:600; font-size:16px; color:var(--text-dark);">📍 파주 웨딩마을</p>
+        <p style="font-size:13px; color:var(--text-muted); margin-bottom:12px;">경기 파주시 탄현면 헤이리마을길 76-12</p>
+        <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(30, 200, 0, 0.08); padding:6px 12px; border-radius:20px; border:1px solid rgba(30,200,0,0.2);">
+          <span style="font-size:12px; color:#1ec800; font-weight:600;">N 네이버 지도</span>
+        </div>
+      </div>
+    `;
+    return;
+  }
+
+  try {
+    const venueLatLng = new naver.maps.LatLng(lat, lng);
+    const mapOptions = {
+      center: venueLatLng,
+      zoom: 16,
+      zoomControl: true,
+      zoomControlOptions: {
+        position: naver.maps.Position.TOP_RIGHT
+      }
+    };
+
+    const map = new naver.maps.Map('naver-map', mapOptions);
+
+    const marker = new naver.maps.Marker({
+      position: venueLatLng,
+      map: map,
+      title: '웨딩마을'
+    });
+
+    const infoWindow = new naver.maps.InfoWindow({
+      content: '<div style="padding:6px 10px; font-size:13px; font-weight:600; color:#222; background:#fff; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">📍 웨딩마을</div>',
+      borderWidth: 0,
+      backgroundColor: 'transparent',
+      anchorSize: new naver.maps.Size(8, 8)
+    });
+
+    infoWindow.open(map, marker);
+  } catch (e) {
+    console.warn('Naver map initialization failed:', e);
+  }
+}
+
