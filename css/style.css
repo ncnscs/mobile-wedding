@@ -1,14 +1,14 @@
 :root {
-  --bg-color: #121316;
-  --card-bg: #1a1c20;
-  --card-border: #2a2d35;
-  --text-primary: #f4f4f6;
-  --text-secondary: #9a9ea7;
-  --accent-gold: #d4af37;
-  --accent-gold-light: #e6ca65;
-  --accent-muted: #c5a880;
-  --shadow-sm: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.6);
+  --bg-color: #FAF8F5;
+  --card-bg: #FFFFFF;
+  --card-border: #EFECE6;
+  --text-primary: #2D2825;
+  --text-secondary: #7A726C;
+  --accent-gold: #C58B7E;
+  --accent-gold-light: #D9A499;
+  --accent-muted: #B38679;
+  --shadow-sm: 0 4px 14px rgba(0, 0, 0, 0.04);
+  --shadow-lg: 0 12px 32px rgba(0, 0, 0, 0.08);
   --font-en-serif: 'Cormorant Garamond', serif;
   --font-kr-serif: 'Noto Serif KR', serif;
   --font-sans: 'Noto Sans KR', 'Inter', sans-serif;
@@ -26,7 +26,7 @@
 }
 
 body {
-  background-color: #0a0b0d;
+  background-color: #ECE8E1;
   color: var(--text-primary);
   font-family: var(--font-sans);
   display: flex;
@@ -42,13 +42,13 @@ body {
   background-color: var(--bg-color);
   min-height: 100vh;
   position: relative;
-  box-shadow: 0 0 40px rgba(0, 0, 0, 0.8);
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
   overflow-x: hidden;
 }
 
 section {
   padding: 56px 24px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .section-header {
@@ -64,12 +64,13 @@ section {
   display: block;
   margin-bottom: 6px;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .section-title {
   font-family: var(--font-kr-serif);
   font-size: 1.4rem;
-  font-weight: 400;
+  font-weight: 500;
   color: var(--text-primary);
 }
 
@@ -114,7 +115,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(180deg, rgba(18, 19, 22, 0.15) 0%, rgba(18, 19, 22, 0.55) 45%, rgba(18, 19, 22, 0.92) 85%, #121316 100%);
+  background: linear-gradient(180deg, rgba(250, 248, 245, 0.05) 0%, rgba(250, 248, 245, 0.35) 45%, rgba(250, 248, 245, 0.88) 82%, #FAF8F5 100%);
   z-index: 2;
 }
 
@@ -131,15 +132,16 @@ section {
   color: var(--accent-gold);
   margin-bottom: 12px;
   text-transform: uppercase;
+  font-weight: 600;
 }
 
 .hero-names {
   font-family: var(--font-kr-serif);
   font-size: 2rem;
-  font-weight: 400;
+  font-weight: 500;
+  color: var(--text-primary);
   margin-bottom: 14px;
   letter-spacing: 2px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
 }
 
 .hero-names .heart {
@@ -151,29 +153,29 @@ section {
 .hero-date-location {
   font-family: var(--font-kr-serif);
   font-size: 1.05rem;
-  color: #ffffff;
+  color: var(--text-primary);
   line-height: 1.8;
   margin-bottom: 28px;
-  font-weight: 400;
+  font-weight: 500;
   letter-spacing: 1px;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.9), 0 0 16px rgba(0, 0, 0, 0.7);
 }
 
 .hero-date-location span.location {
-  color: var(--accent-gold-light);
+  color: var(--accent-gold);
   font-size: 0.95rem;
   display: inline-block;
   margin-top: 2px;
+  font-weight: 600;
 }
 
 .dday-card {
-  background: rgba(18, 19, 22, 0.55);
+  background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(212, 175, 55, 0.3);
+  border: 1px solid rgba(197, 139, 126, 0.3);
   border-radius: var(--radius-md);
   padding: 16px 20px;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.05);
 }
 
 .dday-badge {
@@ -202,16 +204,15 @@ section {
   font-family: var(--font-en-serif);
   font-size: 1.8rem;
   font-weight: 600;
-  color: #ffffff;
+  color: var(--text-primary);
   line-height: 1;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
 }
 
 .time-box label {
   font-family: var(--font-sans);
   font-size: 0.62rem;
   font-weight: 500;
-  color: var(--accent-muted);
+  color: var(--text-secondary);
   letter-spacing: 1.5px;
   margin-top: 6px;
   text-transform: uppercase;
@@ -230,7 +231,7 @@ section {
   text-align: center;
   line-height: 2;
   font-size: 0.95rem;
-  color: #d1d5db;
+  color: #4A443F;
   margin-bottom: 40px;
 }
 
@@ -254,6 +255,7 @@ section {
   border-radius: var(--radius-md);
   padding: 20px 14px;
   text-align: center;
+  box-shadow: var(--shadow-sm);
 }
 
 .couple-role {
@@ -262,12 +264,14 @@ section {
   color: var(--accent-gold);
   letter-spacing: 2px;
   margin-bottom: 4px;
+  font-weight: 600;
 }
 
 .couple-name {
   font-family: var(--font-kr-serif);
   font-size: 1.15rem;
   margin-bottom: 14px;
+  color: var(--text-primary);
 }
 
 .btn-group {
@@ -284,15 +288,15 @@ section {
   padding: 8px 12px;
   border-radius: var(--radius-sm);
   text-decoration: none;
-  background: rgba(255, 255, 255, 0.06);
+  background: rgba(197, 139, 126, 0.08);
   color: var(--text-primary);
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(197, 139, 126, 0.2);
   transition: all 0.2s;
 }
 
 .contact-btn:active {
   background: var(--accent-gold);
-  color: #121316;
+  color: #ffffff;
 }
 
 /* Gallery Section */
@@ -307,7 +311,7 @@ section {
   aspect-ratio: 1 / 1;
   overflow: hidden;
   border-radius: var(--radius-sm);
-  background: #1a1c20;
+  background: #F2EEE9;
   cursor: pointer;
 }
 
@@ -332,11 +336,13 @@ section {
   border-radius: var(--radius-sm);
   font-size: 0.9rem;
   cursor: pointer;
-  transition: border-color 0.2s;
+  box-shadow: var(--shadow-sm);
+  transition: border-color 0.2s, background-color 0.2s;
 }
 
 .gallery-more-btn:active {
   border-color: var(--accent-gold);
+  background: rgba(197, 139, 126, 0.05);
 }
 
 /* Lightbox Modal */
@@ -362,7 +368,7 @@ section {
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.92);
+  background: rgba(28, 25, 23, 0.92);
   backdrop-filter: blur(8px);
   -webkit-backdrop-filter: blur(8px);
 }
@@ -396,7 +402,7 @@ section {
   position: absolute;
   top: 28px;
   left: 20px;
-  color: var(--accent-gold);
+  color: var(--accent-gold-light);
   font-family: var(--font-en-serif);
   font-size: 1.1rem;
 }
@@ -421,8 +427,8 @@ section {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: rgba(255, 255, 255, 0.1);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.25);
   color: #fff;
   font-size: 1.5rem;
   width: 44px;
@@ -460,6 +466,7 @@ section {
   overflow: hidden;
   border: 1px solid var(--card-border);
   margin-bottom: 16px;
+  box-shadow: var(--shadow-sm);
 }
 
 .map-buttons {
@@ -477,6 +484,7 @@ section {
   text-decoration: none;
   font-weight: 500;
   transition: opacity 0.2s;
+  box-shadow: var(--shadow-sm);
 }
 
 .map-btn.naver { background: #03C75A; color: #fff; }
@@ -496,6 +504,7 @@ section {
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   padding: 16px;
+  box-shadow: var(--shadow-sm);
 }
 
 .transport-icon {
@@ -552,6 +561,7 @@ section {
   border: 1px solid var(--card-border);
   border-radius: var(--radius-md);
   overflow: hidden;
+  box-shadow: var(--shadow-sm);
 }
 
 .accordion-header {
@@ -582,7 +592,7 @@ section {
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-out;
-  background: rgba(0, 0, 0, 0.2);
+  background: #F7F4EF;
 }
 
 .account-detail {
@@ -593,6 +603,7 @@ section {
 .bank-name {
   font-size: 0.85rem;
   color: var(--accent-gold);
+  font-weight: 500;
 }
 
 .account-number {
@@ -601,6 +612,7 @@ section {
   font-weight: 600;
   letter-spacing: 1px;
   margin: 6px 0;
+  color: var(--text-primary);
 }
 
 .account-holder {
@@ -611,18 +623,19 @@ section {
 
 .copy-btn {
   padding: 8px 18px;
-  background: rgba(212, 175, 55, 0.15);
+  background: rgba(197, 139, 126, 0.12);
   border: 1px solid var(--accent-gold);
   color: var(--accent-gold);
   border-radius: var(--radius-sm);
   font-size: 0.82rem;
   cursor: pointer;
   transition: all 0.2s;
+  font-weight: 500;
 }
 
 .copy-btn:active {
   background: var(--accent-gold);
-  color: #121316;
+  color: #ffffff;
 }
 
 /* Toast */
@@ -632,7 +645,7 @@ section {
   left: 50%;
   transform: translateX(-50%) translateY(100px);
   background: var(--accent-gold);
-  color: #121316;
+  color: #ffffff;
   font-weight: 600;
   padding: 12px 24px;
   border-radius: 30px;
@@ -665,6 +678,7 @@ section {
 .form-label {
   font-size: 0.85rem;
   color: var(--text-secondary);
+  font-weight: 500;
 }
 
 .form-input, .form-textarea {
@@ -676,11 +690,17 @@ section {
   color: var(--text-primary);
   font-size: 0.9rem;
   font-family: var(--font-sans);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.form-input::placeholder, .form-textarea::placeholder {
+  color: #A8A099;
 }
 
 .form-input:focus, .form-textarea:focus {
   outline: none;
   border-color: var(--accent-gold);
+  box-shadow: 0 0 0 3px rgba(197, 139, 126, 0.15);
 }
 
 .radio-group {
@@ -707,25 +727,32 @@ section {
   font-size: 0.85rem;
   color: var(--text-secondary);
   transition: all 0.2s;
+  box-shadow: var(--shadow-sm);
 }
 
 .radio-btn input:checked + span {
   border-color: var(--accent-gold);
   color: var(--accent-gold);
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(197, 139, 126, 0.12);
+  font-weight: 500;
 }
 
 .rsvp-submit-btn {
   margin-top: 10px;
   padding: 16px;
-  background: linear-gradient(135deg, #d4af37 0%, #c5a880 100%);
-  color: #121316;
+  background: linear-gradient(135deg, #C58B7E 0%, #B37669 100%);
+  color: #ffffff;
   font-weight: 600;
   border: none;
   border-radius: var(--radius-sm);
   font-size: 0.95rem;
   cursor: pointer;
-  box-shadow: var(--shadow-sm);
+  box-shadow: 0 4px 16px rgba(197, 139, 126, 0.3);
+  transition: opacity 0.2s;
+}
+
+.rsvp-submit-btn:active {
+  opacity: 0.9;
 }
 
 .wedding-footer {
@@ -741,7 +768,7 @@ section {
   font-family: var(--font-sans);
   font-size: 0.75rem;
   margin-top: 6px;
-  color: #666;
+  color: #8E8780;
 }
 
 /* RSVP Modal */
@@ -752,7 +779,7 @@ section {
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0, 0, 0, 0.85);
+  background: rgba(45, 40, 37, 0.5);
   backdrop-filter: blur(6px);
   -webkit-backdrop-filter: blur(6px);
   z-index: 3000;
@@ -766,13 +793,14 @@ section {
 }
 
 .rsvp-modal-card {
-  background: var(--card-bg);
+  background: #FFFFFF;
   border: 1px solid var(--accent-gold);
   border-radius: var(--radius-md);
   padding: 32px 24px;
   text-align: center;
   max-width: 340px;
   width: 100%;
+  box-shadow: var(--shadow-lg);
 }
 
 .modal-icon {
@@ -798,7 +826,7 @@ section {
   width: 100%;
   padding: 12px;
   background: var(--accent-gold);
-  color: #121316;
+  color: #ffffff;
   font-weight: 600;
   border: none;
   border-radius: var(--radius-sm);
