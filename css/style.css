@@ -12,6 +12,7 @@
   --font-en-serif: 'Cormorant Garamond', serif;
   --font-kr-serif: 'Noto Serif KR', serif;
   --font-sans: 'Noto Sans KR', 'Inter', sans-serif;
+  --font-num: 'Inter', 'Noto Sans KR', -apple-system, sans-serif;
   --radius-sm: 8px;
   --radius-md: 16px;
   --radius-lg: 24px;
@@ -147,11 +148,21 @@ section {
 }
 
 .hero-date-location {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  margin-bottom: 32px;
-  font-weight: 300;
+  font-size: 1.05rem;
+  color: #ffffff;
+  line-height: 1.7;
+  margin: 16px auto 24px;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  background: rgba(18, 19, 22, 0.7);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  padding: 12px 24px;
+  border-radius: 30px;
+  border: 1px solid rgba(212, 175, 55, 0.4);
+  display: inline-block;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.5);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.8);
 }
 
 .dday-card {
@@ -165,11 +176,11 @@ section {
 }
 
 .dday-badge {
-  font-family: var(--font-en-serif);
-  font-size: 0.85rem;
+  font-family: var(--font-num);
+  font-size: 0.9rem;
   letter-spacing: 2px;
   color: var(--accent-gold);
-  font-weight: 600;
+  font-weight: 700;
   margin-bottom: 8px;
 }
 
@@ -187,24 +198,28 @@ section {
 }
 
 .time-box span {
-  font-family: var(--font-en-serif);
-  font-size: 1.5rem;
-  font-weight: 600;
+  font-family: var(--font-num);
+  font-size: 1.6rem;
+  font-weight: 700;
   color: var(--text-primary);
+  letter-spacing: 0.5px;
 }
 
 .time-box label {
-  font-size: 0.65rem;
+  font-family: var(--font-num);
+  font-size: 0.68rem;
+  font-weight: 600;
   color: var(--text-secondary);
   letter-spacing: 1px;
-  margin-top: 2px;
+  margin-top: 4px;
 }
 
 .time-sep {
-  font-family: var(--font-en-serif);
-  font-size: 1.2rem;
+  font-family: var(--font-num);
+  font-size: 1.3rem;
+  font-weight: 700;
   color: var(--accent-gold);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 /* Invitation Section */

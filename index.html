@@ -14,7 +14,7 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Serif+KR:wght@300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -84,6 +84,21 @@
       </div>
     </section>
 
+    <!-- Gallery Section -->
+    <section class="gallery-section">
+      <div class="section-header">
+        <span class="section-tag">GALLERY</span>
+        <h2 class="section-title">소중한 순간들</h2>
+        <div class="gold-divider"></div>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid">
+        <!-- Rendered dynamically by JS -->
+      </div>
+
+      <button class="gallery-more-btn" id="gallery-more-btn">사진 더보기 (28장)</button>
+    </section>
+
     <!-- RSVP Section -->
     <section class="rsvp-section">
       <div class="section-header">
@@ -137,21 +152,6 @@
 
         <button type="submit" class="rsvp-submit-btn">참석 의사 전달하기</button>
       </form>
-    </section>
-
-    <!-- Gallery Section -->
-    <section class="gallery-section">
-      <div class="section-header">
-        <span class="section-tag">GALLERY</span>
-        <h2 class="section-title">소중한 순간들</h2>
-        <div class="gold-divider"></div>
-      </div>
-
-      <div class="gallery-grid" id="gallery-grid">
-        <!-- Rendered dynamically by JS -->
-      </div>
-
-      <button class="gallery-more-btn" id="gallery-more-btn">사진 더보기 (28장)</button>
     </section>
 
     <!-- Location Section -->
