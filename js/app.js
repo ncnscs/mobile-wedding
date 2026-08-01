@@ -464,7 +464,7 @@ function initNaverMap() {
     });
 
     const infoWindow = new naver.maps.InfoWindow({
-      content: '<div style="padding:6px 10px; font-size:13px; font-weight:600; color:#222; background:#fff; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.15);">📍 웨딩마을</div>',
+      content: '<div style="padding:6px 10px; font-size:13px; font-weight:600; color:#222; background:#fff; border-radius:6px; box-shadow:0 2px 8px rgba(0,0,0,0.15); white-space:nowrap;">📍 웨딩마을</div>',
       borderWidth: 0,
       backgroundColor: 'transparent',
       anchorSize: new naver.maps.Size(8, 8)
