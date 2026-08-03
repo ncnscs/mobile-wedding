@@ -10,13 +10,14 @@ document.addEventListener('DOMContentLoaded', () => {
    2. Photo Gallery & Lightbox Modal
    ========================================================================== */
 const photoList = [
-  "_DSC6200.jpg", "_DSC4473.jpg", "_DSC4481.jpg", "_DSC4484.JPG",
-  "_DSC4506.jpg", "_DSC4514.jpg", "_DSC4515.JPG", "_DSC4530.jpg",
-  "_DSC4541_1.JPG", "_DSC4566.JPG", "_DSC4600.JPG", "_DSC4767.jpg",
-  "_DSC4861-편집.jpg", "_DSC4995.jpg", "_DSC5026.jpg", "_DSC6023.jpg",
-  "_DSC6055.jpg", "_DSC6347.jpg", "_DSC6479.jpg", "_DSC6480.jpg",
-  "_DSC6834.jpg", "_DSC6838.jpg", "_DSC6846.jpg", "_DSC6921.jpg",
-  "2 복사.jpg", "7 복사_(2) 복사.jpg", "9 복사_(2) 복사.jpg", "KakaoTalk_20260425_095251276_01.jpg"
+  "a-cut/1.jpg", "a-cut/2.jpg", "a-cut/3.jpg", "a-cut/4-1.jpg",
+  "a-cut/5.jpg", "a-cut/6.jpg", "a-cut/7.jpg", "a-cut/8.jpg",
+  "a-cut/9.jpg", "a-cut/10.jpg", "a-cut/11.jpg", "a-cut/12-1.jpg",
+  "a-cut/13.jpg", "a-cut/14-1.jpg", "a-cut/15.jpg", "a-cut/17.jpg",
+  "a-cut/18.jpg", "a-cut/19.jpg", "a-cut/20.jpg", "a-cut/21.jpg",
+  "a-cut/22.jpg", "a-cut/23.JPG", "a-cut/24.jpg", "a-cut/25.jpg",
+  "a-cut/26.jpg", "a-cut/27.jpg", "a-cut/28.jpg", "a-cut/29-1.JPG",
+  "a-cut/30-1.JPG"
 ];
 
 let currentIndex = 0;
@@ -308,12 +309,9 @@ function initThanksToast() {
 }
 
 const bcutPhotoList = [
-  "b-cut/KakaoTalk_20260328_153933296.jpg",
-  "b-cut/KakaoTalk_20260328_153933296_03.jpg",
-  "b-cut/_DSC5802.jpg",
-  "b-cut/_DSC6210.jpg",
-  "b-cut/_DSC6622.jpg",
-  "b-cut/_DSC6907.jpg"
+  "b-cut/1.jpg", "b-cut/2.jpg", "b-cut/3.jpg", "b-cut/4.jpg",
+  "b-cut/5.jpg", "b-cut/6.jpg", "b-cut/8.jpg", "b-cut/9.jpg",
+  "b-cut/10.jpg", "b-cut/11.JPG", "b-cut/12-1.JPG", "b-cut/16.jpg"
 ];
 
 function initBCutGallery() {
