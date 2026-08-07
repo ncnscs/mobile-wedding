@@ -12,12 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
 const photoList = [
   "a-cut/1.jpg", "a-cut/2.jpg", "a-cut/3.jpg", "a-cut/4-1.jpg",
   "a-cut/5.jpg", "a-cut/6.jpg", "a-cut/7.jpg", "a-cut/8.jpg",
-  "a-cut/9.jpg", "a-cut/10.jpg", "a-cut/11.jpg", "a-cut/12-1.jpg",
-  "a-cut/13.jpg", "a-cut/14-1.jpg", "a-cut/15.jpg", "a-cut/17.jpg",
-  "a-cut/18.jpg", "a-cut/19.jpg", "a-cut/20.jpg", "a-cut/21.jpg",
-  "a-cut/22.jpg", "a-cut/23.JPG", "a-cut/24.jpg", "a-cut/25.jpg",
-  "a-cut/26.jpg", "a-cut/27.jpg", "a-cut/28.jpg", "a-cut/29-1.JPG",
-  "a-cut/30-1.JPG"
+  "a-cut/8-1.jpg", "a-cut/8-2.jpg", "a-cut/9.jpg", "a-cut/10.jpg",
+  "a-cut/11.jpg", "a-cut/12-1.jpg", "a-cut/13.jpg", "a-cut/14-1.jpg",
+  "a-cut/15.jpg", "a-cut/17.jpg", "a-cut/18.jpg", "a-cut/19.jpg",
+  "a-cut/20.jpg", "a-cut/21.jpg", "a-cut/22.jpg", "a-cut/23.JPG",
+  "a-cut/25.jpg", "a-cut/26.jpg", "a-cut/27.jpg", "a-cut/28.jpg",
+  "a-cut/29-1.JPG", "a-cut/30-1.JPG"
 ];
 
 let currentIndex = 0;
@@ -31,6 +31,7 @@ function initGallery() {
   renderGallery(9);
 
   if (moreBtn) {
+    moreBtn.innerText = `사진 더보기 (${photoList.length}장)`;
     moreBtn.addEventListener('click', () => {
       if (!isExpanded) {
         renderGallery(photoList.length);
