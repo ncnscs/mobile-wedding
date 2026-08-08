@@ -203,7 +203,7 @@ async function handleRSVPSubmit(event) {
   const count = document.getElementById('rsvp-count')?.value || '1';
 
   const mealVal = form.querySelector('input[name="meal"]:checked')?.value;
-  const mealMap = { yes: '식사함', no: '안함', undecided: '미정' };
+  const mealMap = { yes: '참석', no: '불참', undecided: '미정' };
   const meal = mealMap[mealVal] || '미정';
 
   const message = document.getElementById('rsvp-msg')?.value.trim() || '';
